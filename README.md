@@ -1,4 +1,7 @@
 # chess.kt
+
+[![pipeline](https://github.com/krossovochkin/chess.kt/actions/workflows/pipeline.yml/badge.svg?branch=main)](https://github.com/krossovochkin/chess.kt/actions/workflows/pipeline.yml)
+
 Kotlin multiplatform chess backend  
 Also contains example of usage as desktop app  
 
