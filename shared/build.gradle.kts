@@ -2,21 +2,26 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    id("maven-publish")
 }
 
-version = "1.0"
+group = "com.krossovochkin.chess"
+version = "0.1"
 
 kotlin {
-    android()
+    androidTarget()
     iosX64()
     iosArm64()
     //iosSimulatorArm64() sure all ios dependencies support this target
     jvm()
+    js(IR) {
+        useCommonJs()
+        browser()
+        binaries.executable()
+    }
 
     cocoapods {
-        summary = "Some description for the Shared Module"
-        homepage = "Link to the Shared Module homepage"
-        ios.deploymentTarget = "14.1"
+        ios.deploymentTarget = "17"
         framework {
             baseName = "shared"
         }
@@ -31,10 +36,10 @@ kotlin {
             }
         }
         val androidMain by getting
-        val androidTest by getting {
+        val androidUnitTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
-                implementation("junit:junit:4.13.2")
+                implementation(libs.junit)
             }
         }
         val iosX64Main by getting
@@ -59,17 +64,28 @@ kotlin {
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
-                implementation("junit:junit:4.13.2")
+                implementation(libs.junit)
+            }
+        }
+        val jsMain by getting
+        val jsTest by getting {
+            dependencies {
+                implementation(kotlin("test-common"))
+                implementation(kotlin("test-annotations-common"))
             }
         }
     }
 }
 
 android {
-    compileSdk = 31
+    compileSdk = 34
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
         minSdk = 24
-        targetSdk = 31
+        targetSdk = 34
     }
+    kotlin {
+        jvmToolchain(17)
+    }
+    namespace = "com.krossovochkin.chess"
 }

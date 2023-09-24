@@ -9,8 +9,8 @@ buildscript {
         }
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
-        classpath "org.jetbrains.compose:compose-gradle-plugin:1.1.0"
+        classpath libs.kotlin.gradle.plugin
+        classpath libs.compose.gradle.plugin
     }
 }
 
@@ -27,7 +27,7 @@ apply plugin: "org.jetbrains.compose"
 kotlin {
     jvm {
         compilations.all {
-            kotlinOptions.jvmTarget = "11"
+            kotlinOptions.jvmTarget = "17"
         }
     }
     sourceSets {

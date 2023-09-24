@@ -227,7 +227,7 @@ private inline fun Piece(
                         offset = Offset.Zero
                     },
                     onDrag = { change, dragAmount ->
-                        change.consumeAllChanges()
+                        change.consume()
                         offset += dragAmount
                     }
                 )
