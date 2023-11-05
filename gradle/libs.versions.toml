@@ -4,11 +4,11 @@
 
 kotlin = "1.9.20"
 
-gradle-android = '8.1.0'
+gradle-android = '8.3.0-alpha12'
 
-compose = '1.5.1'
+compose = '1.5.10'
 
-compose-compiler = '1.5.2'
+compose-compiler = '1.5.3'
 
 junit = "4.13.2"
 
