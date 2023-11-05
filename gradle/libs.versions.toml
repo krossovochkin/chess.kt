@@ -3,6 +3,12 @@
 [versions]
 
 kotlin = "1.9.0"
+##  ⬆ = "1.9.10"
+##  ⬆ = "1.9.20-Beta"
+##  ⬆ = "1.9.20-Beta2"
+##  ⬆ = "1.9.20-RC"
+##  ⬆ = "1.9.20-RC2"
+##  ⬆ = "1.9.20"
 
 gradle-android = '8.1.0'
 
@@ -33,4 +39,3 @@ kotlin-test-annotations-common = { module = "org.jetbrains.kotlin:kotlin-test-an
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
-
