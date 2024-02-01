@@ -6,9 +6,9 @@ kotlin = "1.9.22"
 
 gradle-android = '8.3.0-alpha12'
 
-compose = '1.5.10'
+compose = '1.5.12'
 
-compose-compiler = '1.5.3'
+compose-compiler = '1.5.8'
 
 junit = "4.13.2"
 
