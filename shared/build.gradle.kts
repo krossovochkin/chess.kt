@@ -30,18 +30,18 @@ kotlin {
     }
     
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(libs.androidx.compose.runtime)
-            }
-        }
+        val commonMain by getting
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
             }
         }
-        val androidMain by getting
+        val androidMain by getting {
+            dependencies {
+                implementation(libs.androidx.compose.runtime)
+            }
+        }
         val androidUnitTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
@@ -66,14 +66,22 @@ kotlin {
             iosArm64Test.dependsOn(this)
             //iosSimulatorArm64Test.dependsOn(this)
         }
-        val jvmMain by getting
+        val jvmMain by getting {
+            dependencies {
+                implementation(libs.androidx.compose.runtime)
+            }
+        }
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
                 implementation(libs.junit)
             }
         }
-        val jsMain by getting
+        val jsMain by getting {
+            dependencies {
+                implementation(libs.androidx.compose.runtime)
+            }
+        }
         val jsTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
