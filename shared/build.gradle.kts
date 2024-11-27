@@ -37,11 +37,7 @@ kotlin {
                 implementation(kotlin("test-annotations-common"))
             }
         }
-        val androidMain by getting {
-            dependencies {
-                implementation(libs.androidx.compose.runtime)
-            }
-        }
+        val androidMain by getting
         val androidUnitTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
@@ -66,22 +62,14 @@ kotlin {
             iosArm64Test.dependsOn(this)
             //iosSimulatorArm64Test.dependsOn(this)
         }
-        val jvmMain by getting {
-            dependencies {
-                implementation(libs.androidx.compose.runtime)
-            }
-        }
+        val jvmMain by getting
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
                 implementation(libs.junit)
             }
         }
-        val jsMain by getting {
-            dependencies {
-                implementation(libs.androidx.compose.runtime)
-            }
-        }
+        val jsMain by getting
         val jsTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
