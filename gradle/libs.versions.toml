@@ -14,11 +14,13 @@ compose-compiler = '1.5.15'
 
 junit = "4.13.2"
 
-[libraries]
+[plugins]
 
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+[libraries]
 
 kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
