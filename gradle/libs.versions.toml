@@ -6,7 +6,7 @@ kotlin = "2.0.21"
 
 gradle-android = '8.9.0-alpha03'
 
-compose = '1.7.5'
+compose = '1.7.1'
 
 compose-plugin = '1.7.1'
 
@@ -27,6 +27,8 @@ kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-p
 com-android-tools-build-gradle = { group = "com.android.tools.build", name="gradle", version.ref = 'gradle-android' }
 
 compose-gradle-plugin = { group = "org.jetbrains.compose", name="compose-gradle-plugin", version.ref = 'compose' }
+
+jetbrains-compose-runtime = { group ="org.jetbrains.compose.runtime", name="runtime", version.ref = 'compose' }
 
 androidx-compose-runtime = { group = "androidx.compose.runtime", name="runtime", version.ref = "compose" }
 
