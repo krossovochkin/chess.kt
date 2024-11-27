@@ -26,6 +26,8 @@ repositories {
     }
 }
 
+apply plugin: "kotlin-multiplatform"
+
 kotlin {
     jvm {
         compilations.all {
