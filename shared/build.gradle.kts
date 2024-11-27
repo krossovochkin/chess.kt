@@ -62,7 +62,11 @@ kotlin {
             iosArm64Test.dependsOn(this)
             //iosSimulatorArm64Test.dependsOn(this)
         }
-        val jvmMain by getting
+        val jvmMain by getting {
+            dependencies {
+                implementation libs.androidx.compose.runtime
+            }
+        }
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
