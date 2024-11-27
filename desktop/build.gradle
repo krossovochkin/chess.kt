@@ -37,6 +37,7 @@ kotlin {
         jvmMain {
             dependencies {
                 implementation compose.desktop.currentOs
+                implementation libs.androidx.compose.runtime
                 implementation project(":shared")
             }
         }
