@@ -10,8 +10,12 @@ buildscript {
     }
     dependencies {
         classpath libs.kotlin.gradle.plugin
-        classpath libs.compose.gradle.plugin
     }
+}
+
+plugins {
+    alias(libs.plugins.jetbrains.compose)
+    alias(libs.plugins.compose.compiler)
 }
 
 repositories {
@@ -22,7 +26,6 @@ repositories {
 }
 
 apply plugin: "kotlin-multiplatform"
-apply plugin: "org.jetbrains.compose"
 
 kotlin {
     jvm {
@@ -34,6 +37,7 @@ kotlin {
         jvmMain {
             dependencies {
                 implementation compose.desktop.currentOs
+                implementation libs.jetbrains.compose.runtime
                 implementation project(":shared")
             }
         }

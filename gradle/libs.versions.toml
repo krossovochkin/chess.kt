@@ -2,15 +2,23 @@
 
 [versions]
 
-kotlin = "1.9.22"
+kotlin = "2.0.21"
 
-gradle-android = '8.3.0-alpha12'
+gradle-android = '8.9.0-alpha03'
 
-compose = '1.5.12'
+compose = '1.7.1'
 
-compose-compiler = '1.5.8'
+compose-plugin = '1.7.1'
+
+compose-compiler = '1.5.15'
 
 junit = "4.13.2"
+
+[plugins]
+
+jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
+
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 [libraries]
 
@@ -19,6 +27,10 @@ kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-p
 com-android-tools-build-gradle = { group = "com.android.tools.build", name="gradle", version.ref = 'gradle-android' }
 
 compose-gradle-plugin = { group = "org.jetbrains.compose", name="compose-gradle-plugin", version.ref = 'compose' }
+
+jetbrains-compose-runtime = { group ="org.jetbrains.compose.runtime", name="runtime", version.ref = 'compose' }
+
+androidx-compose-runtime = { group = "androidx.compose.runtime", name="runtime", version.ref = "compose" }
 
 desktop-jvm-windows-x64 = { group = "org.jetbrains.compose.desktop", name="desktop-jvm-windows-x64", version.ref = 'compose' }
 
