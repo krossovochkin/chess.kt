@@ -64,7 +64,7 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
-                implementation libs.androidx.compose.runtime
+                implementation(libs.androidx.compose.runtime)
             }
         }
         val jvmTest by getting {
