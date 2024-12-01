@@ -13,5 +13,6 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
       - run: chmod +x gradlew
+      - run: ./gradlew wrapper --gradle-version latest
       - run: ./gradlew refreshVersions
       - uses: peter-evans/create-pull-request@v6
