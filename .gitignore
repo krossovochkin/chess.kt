@@ -9,3 +9,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+/.kotlin
+/lib/chesskt/build

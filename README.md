@@ -63,10 +63,5 @@ game.setGameResultCallback { result ->
 ```
 
 # License
-Chess.kt sources  
 Copyright © Vasya Drobushkov  
-License GNU AGPLv3  
-
-Chess pieces images  
-Copyright © [Colin M.L. Burnett](https://en.wikipedia.org/wiki/User:Cburnett)  
-License [GNU GPLv2](https://www.gnu.org/licenses/gpl-2.0.txt)  
+License Apache 2.0

@@ -19,7 +19,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew :shared:jvmJar
+        run: ./gradlew :lib:chesskt:jvmJar
   build-web:
     runs-on: ubuntu-latest
     steps:
@@ -32,7 +32,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew :shared:jsJar
+        run: ./gradlew :lib:chesskt:jsJar
   build-android:
     runs-on: ubuntu-latest
     steps:
@@ -45,7 +45,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew :shared:testDebug
+        run: ./gradlew :lib:chesskt:testDebug
   test:
     runs-on: macos-latest
     steps:
@@ -58,4 +58,4 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew :shared:jvmTest
+        run: ./gradlew :lib:chesskt:jvmTest
