@@ -35,7 +35,7 @@ private data class Config(
 
 @Composable
 @Preview
-fun App(cellSize: Dp = 64.dp) {
+fun App(screenSizePx: Int? = null) {
     MaterialTheme {
         val config = remember {
             Config(
@@ -43,7 +43,7 @@ fun App(cellSize: Dp = 64.dp) {
                     lightColor = Color.Gray,
                     darkColor = Color.DarkGray,
                 ),
-                cellSize = cellSize,
+                cellSize = screenSizePx?.let { (it / 8).dp } ?: 64.dp,
             )
         }
         Game(config = config)

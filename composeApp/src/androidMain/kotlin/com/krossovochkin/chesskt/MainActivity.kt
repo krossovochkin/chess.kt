@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App(cellSize = with(LocalDensity.current) { (resources.displayMetrics.widthPixels / 8).toDp() })
+            App(screenSizePx = resources.displayMetrics.widthPixels)
         }
     }
 }
