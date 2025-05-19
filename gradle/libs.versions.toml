@@ -7,6 +7,7 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
 
 [versions]
 
@@ -30,6 +31,7 @@ androidx-test-junit = "1.2.1"
 compose-multiplatform = "1.8.0-beta02"
 kotlin = "2.2.0-Beta1"
 kotlinx-coroutines = "1.10.2"
+maven-publish = "0.32.0"
 
 [libraries]
 

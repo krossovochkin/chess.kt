@@ -1,7 +1,9 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-    id("maven-publish")
+    alias(libs.plugins.mavenPublish)
 }
 
 group = "com.krossovochkin.chesskt"
@@ -70,7 +72,40 @@ android {
         minSdk = 24
     }
     kotlin {
-        jvmToolchain(17)
+        jvmToolchain(21)
     }
     namespace = "com.krossovochkin.chesskt"
+}
+
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    signAllPublications()
+
+    coordinates(group.toString(), "chess.kt", version.toString())
+
+    pom {
+        name.set("chess.kt")
+        description.set("Kotlin multiplatform chess backend")
+        inceptionYear.set("2022")
+        url.set("https://github.com/krossovochkin/chess.kt")
+        licenses {
+            license {
+                name.set("The Apache License, Version 2.0")
+                url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                distribution.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+            }
+        }
+        developers {
+            developer {
+                id.set("krossovochkin")
+                name.set("Vasya Drobushkov")
+                url.set("https://github.com/krossvochkin/")
+            }
+        }
+        scm {
+            url.set("https://github.com/krossovochkin/chess.kt/")
+            connection.set("scm:git:git://github.com/krossovochkin/chess.kt.git")
+            developerConnection.set("scm:git:ssh://git@github.com/krossovochkin/chess.kt.git")
+        }
+    }
 }
