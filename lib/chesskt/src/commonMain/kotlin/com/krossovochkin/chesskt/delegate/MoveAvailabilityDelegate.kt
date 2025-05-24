@@ -44,12 +44,12 @@ internal class MoveAvailabilityDelegate(
                     fromRank = square.rank,
                     toFile = toSquare.file,
                     toRank = toSquare.rank,
-                    isCapture = null
+                    isCapture = get(toSquare) != null
                 )
             }
         }
         if (piece.type == Piece.Type.King) {
-            generatedMoves += Move.CastleMove.CastleType.values().map { castleType ->
+            generatedMoves += Move.CastleMove.CastleType.entries.map { castleType ->
                 Move.CastleMove(castleType)
             }
         }
@@ -62,12 +62,17 @@ internal class MoveAvailabilityDelegate(
                 val promotionPieces =
                     listOf(Piece.Type.Rook, Piece.Type.Knight, Piece.Type.Bishop, Piece.Type.Queen)
 
-                promotionPieces.flatMap { promotionPiece ->
-                    listOf(-1, 0, 1).map { fileDiff ->
+                generatedMoves += promotionPieces.flatMap { promotionPiece ->
+                    listOf(-1, 0, 1).mapNotNull { fileDiff ->
                         Move.PromotionMove(
-                            fromFile = square.file + fileDiff,
-                            toFile = square.file,
-                            toRank = square.rank,
+                            fromFile = square.file,
+                            toFile = (square.file + fileDiff)
+                                .takeIf { it in 0..7 }
+                                ?: return@mapNotNull null,
+                            toRank = when (color) {
+                                Piece.Color.White -> 7
+                                Piece.Color.Black -> 0
+                            },
                             promotionPiece = promotionPiece,
                             isCapture = null
                         )
