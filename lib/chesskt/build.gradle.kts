@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.krossovochkin.chesskt"
-version = "0.1"
+version = "0.1.1"
 
 kotlin {
     androidTarget()
@@ -81,10 +81,10 @@ mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
 
-    coordinates(group.toString(), "chess.kt", version.toString())
+    coordinates(group.toString(), "chesskt", version.toString())
 
     pom {
-        name.set("chess.kt")
+        name.set("chesskt")
         description.set("Kotlin multiplatform chess backend")
         inceptionYear.set("2022")
         url.set("https://github.com/krossovochkin/chess.kt")

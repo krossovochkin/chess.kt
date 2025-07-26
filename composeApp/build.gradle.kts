@@ -56,7 +56,7 @@ kotlin {
         }
         val commonMain by getting {
             dependencies {
-                implementation("com.krossovochkin.chesskt:chesskt:0.1")
+                implementation("com.krossovochkin.chesskt:chesskt:0.1.1")
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material)
