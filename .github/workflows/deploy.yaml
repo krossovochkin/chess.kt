@@ -1,0 +1,26 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        run: git submodule update --init --recursive
+      - name: set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build with Gradle
+        run: ./gradlew jsBrowserDistribution
+      - name: release
+        run: |
+          chmod +x deploy.sh
+          ./deploy.sh "${{ secrets.USER_GITHUB_TOKEN }}"
+          
