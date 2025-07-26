@@ -1,12 +1,19 @@
 # chess.kt
 
 [![pipeline](https://github.com/krossovochkin/chess.kt/actions/workflows/pipeline.yml/badge.svg?branch=main)](https://github.com/krossovochkin/chess.kt/actions/workflows/pipeline.yml)
+[![maven](https://img.shields.io/maven-central/v/com.krossovochkin.chesskt/chesskt)](https://mvnrepository.com/artifact/com.krossovochkin.chesskt/chesskt)
 
 Kotlin multiplatform chess backend  
 Also contains example of usage as desktop app  
 
 ![](/img/chess_initial.png)
 ![](/img/chess_checkmate.png)
+
+# Integration
+
+```kotlin
+implementation("com.krossovochkin.chesskt:chesskt:x.x.x")
+```
 
 # Usage
 
