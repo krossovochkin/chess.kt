@@ -31,6 +31,6 @@ plugins {
 }
 
 rootProject.name = "chesskt"
-includeBuild("lib")
+//includeBuild("lib")
 include(":composeApp")
 
