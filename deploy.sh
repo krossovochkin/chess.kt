@@ -16,7 +16,7 @@ cd static/applications
 rm -r *
 
 cd ../../..
-cp -a apps/composeApp/build/dist/js/productionExecutable/. website/static/applications/chess.kt
+cp -a composeApp/build/dist/wasmJs/productionExecutable/. website/static/applications/chess.kt
 
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 cd website
