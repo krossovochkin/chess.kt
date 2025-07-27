@@ -13,7 +13,7 @@ git pull origin ${GITHUB_BRANCH}
 shopt -s extglob
 
 cd static/applications
-rm -r *
+rm -r website/static/applications/chess.kt/*
 
 cd ../../..
 cp -a composeApp/build/dist/wasmJs/productionExecutable/. website/static/applications/chess.kt
