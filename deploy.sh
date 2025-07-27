@@ -7,19 +7,19 @@ GITHUB_REPO="krossovochkin/personal-website"
 GITHUB_BRANCH="master"
 
 printf "\033[0;32mClean up website folder...\033[0m\n"
-cd website
+cd personal-website
 git checkout ${GITHUB_BRANCH}
 git pull origin ${GITHUB_BRANCH}
 shopt -s extglob
 
 cd static/applications
-rm -r website/static/applications/chess.kt/* || true
+rm -r personal-website/static/applications/chess.kt/* || true
 
 cd ../../..
-cp -a composeApp/build/dist/wasmJs/productionExecutable/. website/static/applications/chess.kt
+cp -a composeApp/build/dist/wasmJs/productionExecutable/. personal-website/static/applications/chess.kt
 
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
-cd website
+cd personal-website
 
 MESSAGE="update chess.kt app $(date)"
 git add .
