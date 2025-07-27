@@ -1,4 +1,4 @@
-[submodule "website"]
-	path = website
-	url = https://github.com/krossovochkin/personal-website.git
-  branch = master
+[submodule "personal-website"]
+	path = personal-website
+	url = https://github.com/krossovochkin/personal-website
+	branch = master
