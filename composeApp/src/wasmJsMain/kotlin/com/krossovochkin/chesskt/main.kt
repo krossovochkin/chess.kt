@@ -32,10 +32,8 @@ private fun getContainerSize(): Int? {
     }.takeIf { it > 0 }
 }
 
-// --- WASM-safe external declaration ---
 external interface WindowWithFrameElement {
     val frameElement: HTMLElement?
 }
 
-val windowWithFrameElement: WindowWithFrameElement
-    get() = js("window")
+val windowWithFrameElement: WindowWithFrameElement = js("window")
