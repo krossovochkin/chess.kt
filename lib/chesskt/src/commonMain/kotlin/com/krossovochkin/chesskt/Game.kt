@@ -85,12 +85,6 @@ class Game private constructor(
                 move = move,
                 color = currentColor,
             )
-            .also {
-                when (it) {
-                    is MoveResult.Success -> println("${it.move}")
-                    is MoveResult.Error -> println("Failure: $move, reason=${it.reason}")
-                }
-            }
             .let { it is MoveResult.Success }
             .also {
                 if (it) {
