@@ -4,10 +4,11 @@
 [![maven](https://img.shields.io/maven-central/v/com.krossovochkin.chesskt/chesskt)](https://mvnrepository.com/artifact/com.krossovochkin.chesskt/chesskt)
 
 Kotlin multiplatform chess backend  
-Also contains example of usage as desktop app  
 
-![](/img/chess_initial.png)
-![](/img/chess_checkmate.png)
+[Try it](https://krossovochkin.com/apps/chesskt/)
+
+<image src="/img/chess_initial.png" width=300/>
+<image src="/img/chess_checkmate.png" width=300/>
 
 # Integration
 
@@ -68,6 +69,14 @@ game.setGameResultCallback { result ->
     }
 }
 ```
+
+# Test App
+
+Repository contains test compose multiplatform app for demo and testing purposes.  
+There is no any chess moves engine there.  
+The test app is simple, is not intended for production use and is not designed to have a lot of features.
+
+Web version can be found [here](https://krossovochkin.com/apps/chesskt/)
 
 # License
 Copyright © Vasya Drobushkov  
