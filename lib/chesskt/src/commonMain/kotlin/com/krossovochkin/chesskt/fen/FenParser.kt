@@ -64,10 +64,7 @@ internal object FenParser {
                             file += c.digitToInt()
                         }
                         c == ' ' -> state++
-                        else -> {
-                            println("Unknown char '$c' on state '$state'")
-                            return null
-                        }
+                        else -> return null
                     }
                 }
                 1 -> {
@@ -75,10 +72,7 @@ internal object FenParser {
                         'w' -> isWhiteTurn = true
                         'b' -> isWhiteTurn = false
                         ' ' -> state++
-                        else -> {
-                            println("Unknown char '$c' on state '$state'")
-                            return null
-                        }
+                        else -> return null
                     }
                 }
                 2 -> {
@@ -89,10 +83,7 @@ internal object FenParser {
                         'q' -> isBlackQueenCastleAvailable = true
                         '-' -> Unit
                         ' ' -> state++
-                        else -> {
-                            println("Unknown char '$c' on state '$state'")
-                            return null
-                        }
+                        else -> return null
                     }
                 }
                 3 -> {
@@ -110,10 +101,7 @@ internal object FenParser {
                             }
                             state++
                         }
-                        else -> {
-                            println("Unknown char '$c' on state '$state'")
-                            return null
-                        }
+                        else -> return null
                     }
                 }
                 4 -> {
@@ -126,10 +114,7 @@ internal object FenParser {
                             }
                         }
                         ' ' -> state++
-                        else -> {
-                            println("Unknown char '$c' on state '$state'")
-                            return null
-                        }
+                        else -> return null
                     }
                 }
                 5 -> {
@@ -142,10 +127,7 @@ internal object FenParser {
                             }
                         }
                         ' ' -> state++
-                        else -> {
-                            println("Unknown char '$c' on state '$state'")
-                            return null
-                        }
+                        else -> return null
                     }
                 }
                 6 -> {
