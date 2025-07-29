@@ -7,9 +7,6 @@ Kotlin multiplatform chess backend
 
 [Try it](https://krossovochkin.com/apps/chesskt/)
 
-<image src="/img/chess_initial.png" width=300/>
-<image src="/img/chess_checkmate.png" width=300/>
-
 # Integration
 
 ```kotlin
@@ -75,6 +72,9 @@ game.setGameResultCallback { result ->
 Repository contains test compose multiplatform app for demo and testing purposes.  
 There is no any chess moves engine there.  
 The test app is simple, is not intended for production use and is not designed to have a lot of features.
+
+<image src="/img/chess_initial.png" width=300/>
+<image src="/img/chess_checkmate.png" width=300/>
 
 Web version can be found [here](https://krossovochkin.com/apps/chesskt/)
 
