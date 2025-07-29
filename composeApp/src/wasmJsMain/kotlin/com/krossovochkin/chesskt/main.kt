@@ -24,7 +24,7 @@ fun main() {
 }
 
 private fun getContainerSize(): Int? {
-    val iframe = rawWindow.frameElement as? HTMLElement
+    val iframe = windowWithFrameElement.frameElement
     return if (iframe != null) {
         min(iframe.offsetWidth, iframe.offsetHeight)
     } else {
@@ -32,5 +32,10 @@ private fun getContainerSize(): Int? {
     }.takeIf { it > 0 }
 }
 
-@JsName("window")
-external val rawWindow: dynamic
+// --- WASM-safe external declaration ---
+external interface WindowWithFrameElement {
+    val frameElement: HTMLElement?
+}
+
+val windowWithFrameElement: WindowWithFrameElement
+    get() = js("window")
