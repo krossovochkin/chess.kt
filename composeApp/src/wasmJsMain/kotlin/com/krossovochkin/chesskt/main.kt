@@ -9,6 +9,7 @@ import kotlinx.browser.window
 import kotlin.math.min
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.w3c.dom.HTMLElement
+import org.w3c.dom.Element
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalResourceApi::class)
 fun main() {
@@ -24,6 +25,7 @@ fun main() {
 }
 
 private fun getContainerSize(): Int? {
+    val windowWithFrame = js("window") as WindowWithFrameElement
     val iframe = windowWithFrame.frameElement as? HTMLElement
     return if (iframe != null) {
         min(iframe.offsetWidth, iframe.offsetHeight)
@@ -32,9 +34,6 @@ private fun getContainerSize(): Int? {
     }.takeIf { it > 0 }
 }
 
-@JsName("window")
-external val windowWithFrame: WindowWithFrameElement
-
-external interface WindowWithFrameElement : org.w3c.dom.Window {
-    val frameElement: org.w3c.dom.Element?
+external interface WindowWithFrameElement {
+    val frameElement: Element?
 }
