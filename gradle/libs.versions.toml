@@ -12,7 +12,7 @@ mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publi
 [versions]
 
 junit = "4.13.2"
-agp = "8.10.2"
+agp = "8.8.0"
 android-compileSdk = "35"
 android-minSdk = "24"
 android-targetSdk = "35"
