@@ -10,7 +10,17 @@ group = "com.krossovochkin.chesskt"
 version = "0.1.1"
 
 kotlin {
-    androidTarget()
+    android {
+        compileSdk = 35
+        sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+        defaultConfig {
+            minSdk = 24
+        }
+        kotlin {
+            jvmToolchain(21)
+        }
+        namespace = "com.krossovochkin.chesskt"
+    }
 
     jvm()
 
@@ -63,18 +73,6 @@ kotlin {
             }
         }
     }
-}
-
-android {
-    compileSdk = 35
-    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-    defaultConfig {
-        minSdk = 24
-    }
-    kotlin {
-        jvmToolchain(21)
-    }
-    namespace = "com.krossovochkin.chesskt"
 }
 
 mavenPublishing {
