@@ -52,12 +52,12 @@ kotlin {
             }
         }
         val androidMain by getting
-        val androidUnitTestDebug by getting {
+     /*   val androidUnitTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
                 implementation(libs.junit)
             }
-        }
+        }*/
         val jvmMain by getting
         val jvmTest by getting {
             dependencies {
