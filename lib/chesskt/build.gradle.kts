@@ -12,10 +12,10 @@ version = "0.1.1"
 kotlin {
     android {
         compileSdk = 35
-        sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-        defaultConfig {
-            minSdk = 24
-        }
+       // sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+       // defaultConfig {
+       //     minSdk = 24
+      //  }
         kotlin {
             jvmToolchain(21)
         }
