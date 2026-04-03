@@ -31,11 +31,11 @@ kotlin {
             commonWebpackConfig {
                 outputFileName = "chesskt.js"
                 devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
-                    static = (static ?: mutableListOf()).apply {
+                    static((static ?: mutableListOf()).apply {
                         // Serve sources to debug inside browser
                         add(rootDirPath)
                         add(projectDirPath)
-                    }
+                    })
                 }
             }
         }
@@ -73,7 +73,7 @@ kotlin {
 
 
 dependencies {
-    debugImplementation(compose.uiTooling)
+    debugImplementation(libs.compose.uiTooling)
 }
 
 compose.desktop {
