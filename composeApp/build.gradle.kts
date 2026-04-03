@@ -4,11 +4,17 @@ import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
 }
 
 kotlin {
+    android {
+        compileSdk { version = release(36) }
+        namespace = "com.krossovochkin.chesskt.app.lib"
+    }
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -31,11 +37,11 @@ kotlin {
             commonWebpackConfig {
                 outputFileName = "chesskt.js"
                 devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
-                    static((static ?: mutableListOf()).apply {
-                        // Serve sources to debug inside browser
-                        add(rootDirPath)
-                        add(projectDirPath)
-                    })
+              //      static = (static ?: mutableListOf()).apply {
+              //          // Serve sources to debug inside browser
+               //         add(rootDirPath)
+                //        add(projectDirPath)
+                //    }
                 }
             }
         }
@@ -43,14 +49,14 @@ kotlin {
     }
     
     sourceSets {
-        val desktopMain by getting
-        
-        val androidMain by getting {
+        val desktopMain by getting {
             dependencies {
-                implementation(compose.preview)
-                implementation(libs.androidx.activity.compose)
+                implementation(compose.desktop.currentOs)
+                implementation(libs.kotlinx.coroutines.swing)
+                //implementation(libs.compose.ui.tooling)
             }
         }
+
         val commonMain by getting {
             dependencies {
                 implementation("com.krossovochkin.chesskt:chesskt:0.1.1")
@@ -59,21 +65,13 @@ kotlin {
                 implementation(libs.compose.material)
                 implementation(libs.compose.ui)
                 implementation(libs.compose.components.resources)
-                implementation(libs.compose.components.uiToolingPreview)
+                implementation(libs.compose.components.ui.tooling.preview)
                 implementation(libs.androidx.lifecycle.viewmodel)
                 implementation(libs.androidx.lifecycle.runtime.compose)
+                //implementation(libs.compose.ui.tooling)
             }
         }
-        desktopMain.dependencies {
-            implementation(compose.desktop.currentOs)
-            implementation(libs.kotlinx.coroutines.swing)
-        }
     }
-}
-
-
-dependencies {
-    debugImplementation(libs.compose.uiTooling)
 }
 
 compose.desktop {
