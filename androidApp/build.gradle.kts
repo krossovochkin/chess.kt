@@ -4,7 +4,6 @@ plugins {
 
 dependencies {
 	implementation(project(":composeApp"))
-	//implementation(libs.compose.preview)
     implementation(libs.androidx.activity.compose)
     implementation(libs.compose.components.ui.tooling.preview)
 }

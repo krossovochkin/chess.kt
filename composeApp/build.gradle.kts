@@ -46,7 +46,6 @@ kotlin {
             dependencies {
                 implementation(compose.desktop.currentOs)
                 implementation(libs.kotlinx.coroutines.swing)
-                //implementation(libs.compose.ui.tooling)
             }
         }
 
@@ -61,7 +60,6 @@ kotlin {
                 implementation(libs.compose.components.ui.tooling.preview)
                 implementation(libs.androidx.lifecycle.viewmodel)
                 implementation(libs.androidx.lifecycle.runtime.compose)
-                //implementation(libs.compose.ui.tooling)
             }
         }
     }
