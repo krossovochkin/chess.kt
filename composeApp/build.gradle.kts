@@ -11,7 +11,7 @@ plugins {
 
 kotlin {
     android {
-        compileSdk { version = release(36) }
+        compileSdk { version = release(libs.versions.android.compileSdk.get().toInt()) }
         namespace = "com.krossovochkin.chesskt.app.lib"
     }
 
@@ -36,13 +36,6 @@ kotlin {
             val projectDirPath = project.projectDir.path
             commonWebpackConfig {
                 outputFileName = "chesskt.js"
-                devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
-              //      static = (static ?: mutableListOf()).apply {
-              //          // Serve sources to debug inside browser
-               //         add(rootDirPath)
-                //        add(projectDirPath)
-                //    }
-                }
             }
         }
         binaries.executable()

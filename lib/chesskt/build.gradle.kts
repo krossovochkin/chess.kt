@@ -11,15 +11,12 @@ version = "0.1.1"
 
 kotlin {
     android {
-        compileSdk = 36
-       // sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-       // defaultConfig {
-       //     minSdk = 24
-      //  }
+        compileSdk = libs.versions.android.compileSdk.get().toInt()
         kotlin {
             jvmToolchain(21)
         }
         namespace = "com.krossovochkin.chesskt"
+        withHostTest {}
     }
 
     jvm()
@@ -52,12 +49,12 @@ kotlin {
             }
         }
         val androidMain by getting
-     /*   val androidUnitTest by getting {
+        val androidHostTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
                 implementation(libs.junit)
             }
-        }*/
+        }
         val jvmMain by getting
         val jvmTest by getting {
             dependencies {
