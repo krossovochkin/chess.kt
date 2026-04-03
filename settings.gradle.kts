@@ -33,4 +33,5 @@ plugins {
 rootProject.name = "chesskt"
 includeBuild("lib")
 include(":composeApp")
+include(":androidApp")
 

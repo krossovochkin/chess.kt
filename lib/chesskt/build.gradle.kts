@@ -10,7 +10,14 @@ group = "com.krossovochkin.chesskt"
 version = "0.1.1"
 
 kotlin {
-    androidTarget()
+    android {
+        compileSdk = libs.versions.android.compileSdk.get().toInt()
+        kotlin {
+            jvmToolchain(21)
+        }
+        namespace = "com.krossovochkin.chesskt"
+        withHostTest {}
+    }
 
     jvm()
 
@@ -42,7 +49,7 @@ kotlin {
             }
         }
         val androidMain by getting
-        val androidUnitTest by getting {
+        val androidHostTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
                 implementation(libs.junit)
@@ -63,18 +70,6 @@ kotlin {
             }
         }
     }
-}
-
-android {
-    compileSdk = 35
-    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-    defaultConfig {
-        minSdk = 24
-    }
-    kotlin {
-        jvmToolchain(21)
-    }
-    namespace = "com.krossovochkin.chesskt"
 }
 
 mavenPublishing {
