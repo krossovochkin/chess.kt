@@ -60,4 +60,4 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew :lib:chesskt:jvmTest :lib:chesskt:testAndroidDebugUnitTest
+        run: ./gradlew :lib:chesskt:jvmTest :lib:chesskt:testDebugUnitTest
