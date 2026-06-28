@@ -147,12 +147,12 @@ class RookTest {
     }
 
     @Test
-    fun `if move and two rooks able to move to target square and has starting square (rank) then moves`() {
+    fun `if move and two rooks able to move to target square and has starting square rank then moves`() {
 
     }
 
     @Test
-    fun `if move and two rooks able to move to target square and has starting square (file) then moves`() {
+    fun `if move and two rooks able to move to target square and has starting square file then moves`() {
 
     }
 
@@ -162,12 +162,12 @@ class RookTest {
     }
 
     @Test
-    fun `if capture and two rooks able to move to target square and has starting square (rank) then captures`() {
+    fun `if capture and two rooks able to move to target square and has starting square rank then captures`() {
 
     }
 
     @Test
-    fun `if capture and two rooks able to move to target square and has starting square (file) then captures`() {
+    fun `if capture and two rooks able to move to target square and has starting square file then captures`() {
 
     }
 }
