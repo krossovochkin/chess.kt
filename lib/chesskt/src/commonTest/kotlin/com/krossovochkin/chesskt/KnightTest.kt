@@ -129,7 +129,7 @@ class KnightTest {
     }
 
     @Test
-    fun `if move and two knights able to move to target square and has starting square (rank) then moves`() {
+    fun `if move and two knights able to move to target square and has starting square rank then moves`() {
         testMove(
             initialFen = "rnbqkbnr/ppp2ppp/4p3/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3",
             move = "Nbd2",
@@ -138,7 +138,7 @@ class KnightTest {
     }
 
     @Test
-    fun `if move and two knights able to move to target square and has starting square (file) then moves`() {
+    fun `if move and two knights able to move to target square and has starting square file then moves`() {
         testMove(
             initialFen = "rnbq1bnr/ppNppkp1/5p2/8/7p/2N5/PPPPPPPP/R1BQKB1R w KQ - 1 6",
             move = "N7d5",
@@ -155,7 +155,7 @@ class KnightTest {
     }
 
     @Test
-    fun `if captures and two knights able to move to target square and has starting square (rank) then moves`() {
+    fun `if captures and two knights able to move to target square and has starting square rank then moves`() {
         testMove(
             initialFen = "rnbqkbnr/pppp1ppp/8/8/7P/5N2/PPPpPPP1/RNBQKB1R w KQkq - 0 5",
             move = "Nbxd2",
@@ -164,7 +164,7 @@ class KnightTest {
     }
 
     @Test
-    fun `if captures and two knights able to move to target square and has starting square (file) then moves`() {
+    fun `if captures and two knights able to move to target square and has starting square file then moves`() {
         testMove(
             initialFen = "rnbq1bnr/ppN1pkp1/5p2/3p4/7p/2N4P/PPPPPPP1/R1BQKB1R w KQ - 0 7",
             move = "N7xd5",

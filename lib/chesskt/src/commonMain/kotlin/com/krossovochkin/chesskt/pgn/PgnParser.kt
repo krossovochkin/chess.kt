@@ -8,9 +8,9 @@ object PgnParser {
         var current = pgn
 
         // remove all info about game
-        current = current.replace("\\[.+]".toRegex(), "")
+        current = current.replace("\\[[^]]+]".toRegex(), "")
         // replace all comments
-        current = current.replace("\\{.+}".toRegex(), "")
+        current = current.replace("\\{[^}]+\\}".toRegex(), "")
         // remove all move numbers
         current = current.replace("\\d*\\. ".toRegex(), "")
         // remove all new lines
