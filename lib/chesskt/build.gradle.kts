@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.krossovochkin.chesskt"
-version = "0.2.1"
+version = "0.2.2"
 
 kotlin {
     android {
