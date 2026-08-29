@@ -15,4 +15,4 @@ jobs:
       - run: chmod +x gradlew
       - run: ./gradlew wrapper --gradle-version latest
       - run: ./gradlew refreshVersions
-      - uses: peter-evans/create-pull-request@v6
+      - uses: peter-evans/create-pull-request@v8
